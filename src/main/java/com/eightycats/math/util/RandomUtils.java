@@ -21,7 +21,7 @@ import java.util.concurrent.ThreadLocalRandom;
  */
 public class RandomUtils
 {
-    protected static ThreadLocalRandom getRandom ()
+    public static ThreadLocalRandom getRandom ()
     {
         return ThreadLocalRandom.current();
     }
