@@ -7,7 +7,6 @@ import java.util.*;
  */
 public abstract class ArrayUtils
 {
-
     /**
      * This copies the given values into the new array of the given size.
      *
