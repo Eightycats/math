@@ -22,5 +22,5 @@ package com.eightycats.math.functions;
  */
 public interface Processor
 {
-    public double[] process( double[] input );
+    double[] process( double[] input );
 }

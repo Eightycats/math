@@ -66,7 +66,7 @@ public class Fibonacci
         }
         // after this point, the long starts to overflow
         if (n > 70) {
-            throw new IllegalArgumentException("Cannot estimate for valuse over 70.");
+            throw new IllegalArgumentException("Cannot estimate for values over 70.");
         }
         return Math.round((Math.pow(PHI, n) - Math.pow(PHI_RECIPROCAL, n)) / SQUARE_ROOT_5);
     }

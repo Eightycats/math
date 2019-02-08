@@ -20,7 +20,6 @@ package com.eightycats.math.normalization;
 public class PassthroughNormalization
     implements Normalizer
 {
-    @Override
     public double[] normalize (double[] inputs)
     {
         return inputs;
@@ -29,7 +28,6 @@ public class PassthroughNormalization
     /**
      * Returns the given value.
      */
-    @Override
     public double normalize (double value)
     {
         return value;

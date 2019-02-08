@@ -12,7 +12,7 @@
  * the License.
  */
 
-package com.eightycats.math.average;
+package com.eightycats.math.stats;
 
 /**
  * Calculates the average of the last N values to be added.
@@ -41,7 +41,7 @@ public class MovingAverage
 
     public boolean isFull ()
     {
-        return getCount() >= getSize();
+        return _valueCount >= getSize();
     }
 
     public int getSize ()

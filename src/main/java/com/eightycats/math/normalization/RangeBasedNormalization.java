@@ -86,7 +86,6 @@ public class RangeBasedNormalization
         _minOutput = minOutput;
     }
 
-    @Override
     public double[] normalize (double[] inputs)
     {
         int length = inputs.length;
@@ -99,14 +98,13 @@ public class RangeBasedNormalization
         return outputs;
     }
 
-    @Override
     public double normalize (double input)
     {
         // get the input value as the percentage of the
         // difference between the max and min possible inputs
         double output = (input - _minInput) / (_maxInput - _minInput);
 
-        // Multiply this ration times the difference
+        // Multiply this ratio times the difference
         // between the max and min possible outputs.
         // This scales the value to the output range.
         output *= (_maxOutput - _minOutput);
@@ -122,7 +120,7 @@ public class RangeBasedNormalization
     public static void main (String[] args)
     {
         RangeBasedNormalization normalizer = new RangeBasedNormalization(0, 10, -1, 1);
-        for (double d = -10; d <= 10; d += .5) {
+        for (double d = -10; d <= 15; d += .5) {
             double[] input = new double[] { d };
             System.out.println(d + " : " + normalizer.normalize(input)[0]);
         }

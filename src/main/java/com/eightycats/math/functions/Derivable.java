@@ -19,5 +19,5 @@ package com.eightycats.math.functions;
  */
 public interface Derivable
 {
-    public Function getDerivative();
+    Function getDerivative();
 }

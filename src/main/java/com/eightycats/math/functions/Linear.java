@@ -17,15 +17,9 @@ package com.eightycats.math.functions;
 /**
  * Straight line.
  */
-public class Linear implements Function
+public class Linear extends LinearEquation
 {
-    /**
-     * This is a passthrough method. It returns the given value.
-     */
-    @Override
-    public double apply (double value)
-    {
-        return value;
+    public Linear() {
+        super(1, 0);
     }
-
 }

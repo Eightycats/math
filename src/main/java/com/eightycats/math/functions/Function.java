@@ -19,5 +19,5 @@ package com.eightycats.math.functions;
  */
 public interface Function
 {
-   public double apply( double value );
+    double apply( double value );
 }

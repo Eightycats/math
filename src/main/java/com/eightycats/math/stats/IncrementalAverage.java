@@ -12,7 +12,7 @@
  * the License.
  */
 
-package com.eightycats.math.average;
+package com.eightycats.math.stats;
 
 /**
  * Calculates an average of added values.
