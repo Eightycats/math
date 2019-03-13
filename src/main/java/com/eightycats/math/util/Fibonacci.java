@@ -11,8 +11,7 @@
  * or implied. See the License for the specific language governing permissions and limitations under
  * the License.
  */
-
-package com.eightycats.math.sideshow;
+package com.eightycats.math.util;
 
 import java.math.BigDecimal;
 import java.math.BigInteger;

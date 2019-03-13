@@ -17,7 +17,7 @@ package com.eightycats.math.stats;
 /**
  * Calculates an average of added values.
  */
-public class IncrementalAverage
+public class IncrementalAverage implements Average
 {
     /**
      * Number of values added so far.

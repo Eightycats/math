@@ -5,7 +5,7 @@ import com.eightycats.math.functions.LinearEquation;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DataSet {
+public class DataSet implements Average {
     protected List<Double> values = new ArrayList<>();
 
     public DataSet() {
@@ -27,12 +27,6 @@ public class DataSet {
      */
     public void add(double value) {
         values.add(value);
-    }
-
-    public void add(double[] values) {
-        for (double value : values) {
-            add(value);
-        }
     }
 
     public double getValue(int index) {
@@ -58,7 +52,7 @@ public class DataSet {
      * Gets the mean of all the values added so far.
      */
     public double getAverage() {
-        return  getSafeAverage(getSum());
+        return getSafeAverage(getSum());
     }
 
     protected double getSafeAverage(double sum) {
@@ -71,13 +65,13 @@ public class DataSet {
 
     public double getStandardDeviation() {
         double mean = getAverage();
-        double squaredDeviationTotal = 0.0;
+        double varianceTotal = 0.0;
         for (Double value : values) {
             double delta = value - mean;
             delta = Math.pow(delta, 2);
-            squaredDeviationTotal += delta;
+            varianceTotal += delta;
         }
-        return Math.sqrt(getSafeAverage(squaredDeviationTotal));
+        return Math.sqrt(getSafeAverage(varianceTotal));
     }
 
     public LinearEquation getLinearRegression() {

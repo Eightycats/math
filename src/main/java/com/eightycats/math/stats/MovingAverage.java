@@ -15,9 +15,9 @@
 package com.eightycats.math.stats;
 
 /**
- * Calculates the average of the last N values to be added.
+ * Calculates the average of the last N values added.
  */
-public class MovingAverage
+public class MovingAverage implements Average
 {
     /**
      * A circular buffer of the values to be averaged.
@@ -73,11 +73,24 @@ public class MovingAverage
 
     public double getAverage ()
     {
-        return getSum() / getCount();
+        double average = getSum();
+        int count = getCount();
+        if (count > 0) {
+            average /= count;
+        }
+        return average;
     }
 
     public int getCount ()
     {
         return isFull() ? getSize() : _valueCount;
+    }
+
+    @Override
+    public void reset()
+    {
+        _index = 0;
+        _valueCount = 0;
+        _values = new double[_values.length];
     }
 }
