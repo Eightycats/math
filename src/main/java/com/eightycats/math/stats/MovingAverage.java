@@ -14,11 +14,12 @@
 
 package com.eightycats.math.stats;
 
+import java.util.Arrays;
+
 /**
  * Calculates the average of the last N values added.
  */
-public class MovingAverage implements Average
-{
+public class MovingAverage implements Average {
     /**
      * A circular buffer of the values to be averaged.
      */
@@ -34,23 +35,19 @@ public class MovingAverage implements Average
      */
     protected int _valueCount = 0;
 
-    public MovingAverage (int size)
-    {
+    public MovingAverage(int size) {
         _values = new double[size];
     }
 
-    public boolean isFull ()
-    {
+    public boolean isFull() {
         return _valueCount >= getSize();
     }
 
-    public int getSize ()
-    {
+    public int getSize() {
         return _values.length;
     }
 
-    public synchronized void add (double value)
-    {
+    public synchronized void add(double value) {
         _values[_index] = value;
 
         if (_valueCount < getSize()) {
@@ -62,8 +59,7 @@ public class MovingAverage implements Average
         _index %= getSize();
     }
 
-    public double getSum ()
-    {
+    public double getSum() {
         double sum = 0.0;
         for (int i = 0; i < getCount(); i++) {
             sum += _values[i];
@@ -71,8 +67,7 @@ public class MovingAverage implements Average
         return sum;
     }
 
-    public double getAverage ()
-    {
+    public double getAverage() {
         double average = getSum();
         int count = getCount();
         if (count > 0) {
@@ -81,16 +76,19 @@ public class MovingAverage implements Average
         return average;
     }
 
-    public int getCount ()
-    {
+    public int getCount() {
         return isFull() ? getSize() : _valueCount;
     }
 
     @Override
-    public void reset()
-    {
+    public void reset() {
         _index = 0;
         _valueCount = 0;
         _values = new double[_values.length];
+    }
+
+    @Override
+    public String toString() {
+        return "values=" + Arrays.toString(_values) + ", valueCount=" + _valueCount + ", average=" + getAverage();
     }
 }
