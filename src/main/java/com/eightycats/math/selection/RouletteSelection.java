@@ -22,7 +22,7 @@ import java.util.Map.Entry;
  * A random, weighted selection.
  *
  * For example, if two objects are added, and one is given a weight of 10 and the other a weight of
- * 50, then the second object should be selected 5 times more often than the first..
+ * 50, then the second object should be selected 5 times more often than the first.
  */
 public class RouletteSelection<T>
 {

@@ -17,7 +17,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Utility functions to generate all the different permutations of items in a list.ß
+ * Utility functions to generate all the different permutations of items in a list.
  */
 public class Permutations
 {
